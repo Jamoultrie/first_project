@@ -1,0 +1,19 @@
+{
+  "name": "join_us",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sass": "node-sass --watch sass -o public/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "faker": "^4.1.0",
+    "mysql": "^2.13.0",
+    "node-sass": "^4.12.0"
+  }
+}
