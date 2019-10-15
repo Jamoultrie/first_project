@@ -1,3 +1,6 @@
+:root {
+  --border: 1px solid gray; }
+
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -13,6 +16,12 @@ h1 {
   font-weight: 100;
   padding-bottom: 30px; }
 
+h3 {
+  font-size: 50px;
+  line-height: 40px;
+  font-weight: 100;
+  padding-bottom: 1px; }
+
 p {
   margin: 0;
   font-size: 50px; }
@@ -23,7 +32,7 @@ form {
 
 button {
   line-height: 1;
-  border: 1px solid gray;
+  border: --border;
   border-left: none;
   border-radius: 0 5px 5px 0;
   color: #424556;
@@ -32,9 +41,9 @@ button {
   opacity: 0.8; }
 
 input {
-  padding: 6px;
+  padding: 5px;
   border-radius: 5px 0 0 5px;
-  border: 1px solid gray;
+  border: --border;
   font-size: 11px; }
 
 input[type=text]:focus {
@@ -44,7 +53,7 @@ input[type=text]:focus {
   button {
     width: 100%;
     border-radius: 5px;
-    border-left: 1px solid gray;
+    border-left: --border;
     margin-top: 5px; }
   input {
     width: 100%;
@@ -55,6 +64,9 @@ ul {
   list-style: none;
   background-color: #fffcf7;
   margin: 30px auto 0 auto;
+  max-height: 200px;
+  max-width: 400px;
+  overflow: auto;
   display: block;
   padding: 0; }
   ul li {

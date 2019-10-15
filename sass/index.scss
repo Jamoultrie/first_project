@@ -1,5 +1,9 @@
 @import "measurements";
 
+:root {
+  --border: 1px solid gray;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -17,6 +21,13 @@ h1{
   padding-bottom: 30px
 }
 
+h3 {
+  font-size: 50px;
+  line-height: 40px;
+  font-weight: $font-weight;
+  padding-bottom: 1px;
+}
+
 p {
   margin: 0;
   font-size: 50px;
@@ -30,7 +41,7 @@ form {
 
 button {
   line-height: 1;
-  border: 1px solid gray;
+  border: --border;
   border-left: none;
   border-radius: 0 5px 5px 0;
   color: rgb(66,69,86);
@@ -41,9 +52,9 @@ button {
 }
 
 input {
-  padding: 6px;
+  padding: 5px;
   border-radius: 5px 0 0 5px;
-  border: 1px solid gray;
+  border: --border;
   font-size: 11px;
 }
 
@@ -56,15 +67,15 @@ input[type=text]:focus {
 button {
   width: 100%;
   border-radius: 5px;
-  border-left: 1px solid gray;
+  border-left: --border;
   margin-top: 5px;
-  }
+}
   // button + input borders are complete
   // spacing between button and input
 input {
   width: 100%;
-border-radius: 5px;
-  }
+  border-radius: 5px;
+}
   // border radeyiii are correct
 
 }
@@ -74,11 +85,14 @@ ul {
   list-style: none;
   background-color: #fffcf7;
   margin: 30px auto 0 auto;
+  max-height: 200px;
+  max-width: 400px;
+  overflow: auto;
   display: block;
   padding: 0;
 
-  li {
-    padding: 5px;
+li {
+  padding: 5px;
   }
 }
 
