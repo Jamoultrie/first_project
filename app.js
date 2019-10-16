@@ -7,13 +7,35 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  database : 'first_project',
-  password : 'gracen1331',
-  insecureAuth : true
+// var connection = mysql.createConnection({
+//   host     : 'mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true',
+//   user     : 'bba7090bbe2dde',
+//   password : 'b1237e3b',
+//   insecureAuth : true
+// });
+
+var connection = mysql.createConnection("mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true");
+
+
+
+var w = "CREATE DATABASE IF NOT EXISTS join_us"
+connection.query(w, function(err){
+  if(err){
+    throw err;
+  }
+  else{
+    connection.query("USE join_us", function(err){
+      if(err) throw err;
+      else{
+        connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
+          if(err) throw err;
+        });
+      }
+    });
+  }
 });
+
+
 
 app.get("/", function(req, res){
     // Find count of users in DB
