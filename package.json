@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "sass": "node-sass --watch sass -o public/css",
-    "start": "node app.js"
+    "start": "npm i && node app.js"
   },
   "author": "",
   "license": "ISC",
