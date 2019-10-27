@@ -38,22 +38,22 @@ var connection = mysql.createConnection("mysql://bba7090bbe2dde:b1237e3b@us-cdbr
 // Get a reference to the storage service, which is used to create references in your storage bucket
 // var storage = firebase.storage();
 
-// var w = "CREATE DATABASE IF NOT EXISTS join_us"
-// connection.query(w, function(err){
-//   if(err){
-//     throw err;
-//   }
-//   else{
-//     connection.query("USE join_us", function(err){
-//       if(err) throw err;
-//       else{
+var w = "CREATE DATABASE IF NOT EXISTS join_us"
+connection.query(w, function(err){
+  if(err){
+    throw err;
+  }
+  else{
+    connection.query("USE join_us", function(err){
+      if(err) throw err;
+      else{
         connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
           if(err) throw err;
         });
-//       }
-//     });
-//   }
-// });
+      }
+    });
+  }
+});
 
 app.get("/", function(req, res) {
     // Find count of users in DB
