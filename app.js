@@ -34,37 +34,43 @@ var connection = mysql.createConnection({
 // Get a reference to the storage service, which is used to create references in your storage bucket
 // var storage = firebase.storage();
 
-var w = "CREATE DATABASE IF NOT EXISTS join_us"
-connection.query(w, function(err){
-  if(err){
-    throw err;
-  }
-  else{
-    connection.query("USE join_us", function(err){
-      if(err) throw err;
-      else{
-        connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
-          if(err) throw err;
-        });
-      }
-    });
-  }
-});
+// var w = "CREATE DATABASE IF NOT EXISTS join_us"
+// connection.query(w, function(err){
+//   if(err){
+//     throw err;
+//   }
+//   else{
+//     connection.query("USE join_us", function(err){
+//       if(err) throw err;
+//       else{
+//         connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
+//           if(err) throw err;
+//         });
+//       }
+//     });
+//   }
+// });
 
 app.get("/", function(req, res) {
     // Find count of users in DB
-    var q = "SELECT * FROM users";
-    connection.query(q, function(err, results){
-        if(err) throw err;
+    // var q = "SELECT * FROM users";
+    // connection.query(q, function(err, results){
+    //     if(err) throw err;
+    //
+    //     var count = results.length
+    //     var emails = results
+    //
+    //     res.render("home", {
+    //       count: count,
+    //       emails: emails
+    //     });
+    // });
 
-        var count = results.length
-        var emails = results
-
-        res.render("home", {
-          count: count,
-          emails: emails
-        });
+    res.render("home", {
+      count: 123,
+      emails: [{email: 'asdf'}]
     });
+
 });
 
 app.post("/register", function(req, res){
