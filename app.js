@@ -43,9 +43,9 @@ var connection = mysql.createConnection({
 //     connection.query("USE join_us", function(err){
 //       if(err) throw err;
 //       else{
-//         connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
-//           if(err) throw err;
-//         });
+        connection.query("CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100))", function(err){
+          if(err) throw err;
+        });
 //       }
 //     });
 //   }
@@ -53,24 +53,18 @@ var connection = mysql.createConnection({
 
 app.get("/", function(req, res) {
     // Find count of users in DB
-    // var q = "SELECT * FROM users";
-    // connection.query(q, function(err, results){
-    //     if(err) throw err;
-    //
-    //     var count = results.length
-    //     var emails = results
-    //
-    //     res.render("home", {
-    //       count: count,
-    //       emails: emails
-    //     });
-    // });
+    var q = "SELECT * FROM users";
+    connection.query(q, function(err, results){
+        if(err) throw err;
 
-    res.render("home", {
-      count: 123,
-      emails: [{email: 'asdf'}]
+        var count = results.length
+        var emails = results
+
+        res.render("home", {
+          count: count,
+          emails: emails
+        });
     });
-
 });
 
 app.post("/register", function(req, res){
