@@ -14,12 +14,16 @@ app.use(express.static(__dirname + "/public"));
 //   insecureAuth : true
 // });
 
-var connection = mysql.createConnection({
-  host     : 'mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true',
-  user     : 'bba7090bbe2dde',
-  password : 'b1237e3b',
-  insecureAuth : true
-});
+// var connection = mysql.createConnection({
+//   host     : 'mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true',
+//   host     : 'mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true',
+//   user     : 'bba7090bbe2dde',
+//   password : 'b1237e3b',
+//   insecureAuth : true
+// });
+
+var connection = mysql.createConnection("mysql://bba7090bbe2dde:b1237e3b@us-cdbr-iron-east-05.cleardb.net/heroku_e006ccfc8d8e81b?reconnect=true");
+
 
 // // Set the configuration for your app
 // // TODO: Replace with your app's config object
